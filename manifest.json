@@ -1,45 +1,11 @@
 {
     "manifest_version": 3,
-    "name": "Your Extension Name",
+    "name": "clipboard",
+    "description": "Base Level Extension",
     "version": "1.0",
-    "description": "Description of your extension",
-    "icons": {
-      "128": "icon.png"
-    },
+    "permissions": ["clipboardRead"],
     "action": {
       "default_popup": "index.html",
-      "default_icon": {
-        "128": "icon.png"
-      }
-    },
-    "permissions": [
-      "activeTab"
-    ],
-    "background": {
-      "service_worker": "backgroundScript.js"
-    },
-    "content_scripts": [
-      {
-        "matches": [
-          "<all_urls>"
-        ],
-        "js": ["content.js"]
-      }
-    ],
-    "options_page": "options.html",
-    "browser_action": {
-      "default_popup": "popup.html",
-      "default_icon": {
-        "128": "icon.png"
-      }
-    },
-    "web_accessible_resources": [
-      "images/*.png"
-    ],
-    "permissions": ["tabs", "storage", "webNavigation", "http://*/*", "https://*/*"],
-    "permissions": [
-      "storage",
-      "activeTab"
-    ]
+      "default_icon": "download (1).png"
+    }
   }
-  

@@ -7,27 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-    
-        function logClipboardValue() {
-        navigator.clipboard.readText()
-          .then(text => {
-            console.log("Clipboard value:", text);
-          })
-          .catch(err => {
-            console.error("Failed to read clipboard contents:", err);
-          });
-        
-      }
-
-      logClipboardValue()
-      logClipboardValue()
-      logClipboardValue()
-      logClipboardValue()
-      
-
-
-    </script>
+    <button id="test-btn""> copy to another device </button>
+    <script src="backgroundScript.js"></script>
 </body>
     
 </html>
