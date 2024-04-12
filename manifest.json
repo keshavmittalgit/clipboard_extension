@@ -1,11 +1,21 @@
 {
-    "manifest_version": 3,
-    "name": "clipboard",
-    "description": "Base Level Extension",
-    "version": "1.0",
-    "permissions": ["clipboardRead"],
-    "action": {
-      "default_popup": "index.html",
-      "default_icon": "download (1).png"
+  "manifest_version": 3,
+  "name": "clipboard",
+  "description": "Base Level Extension",
+  "version": "1.0",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "clipboard-icon.png",
+      "48": "clipboard-icon.png"
     }
+  },
+  "permissions": [
+    "clipboardRead",
+    "clipboardWrite",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "backgroundScript.js"
   }
+}
