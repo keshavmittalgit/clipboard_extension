@@ -4,7 +4,7 @@
   "description": "Base Level Extension",
   "version": "1.0",
   "action": {
-    "default_popup": "index.html",
+    "default_popup": "popup.html",
     "default_icon": {
       "16": "icons/clipboard-icon.png",
       "48": "icons/clipboard-icon.png"
