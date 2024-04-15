@@ -21,6 +21,6 @@
     "activeTab"
   ],
   "background": {
-    "service_worker": "backgroundScript.js"
+    "service_worker": "background.js"
   }
 }
