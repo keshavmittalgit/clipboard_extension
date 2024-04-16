@@ -8,4 +8,13 @@ body{
     height: 200px;
    text-align: center;
 }
-
+/* #send-btn {
+    border: 0 solid none;
+    color: white;
+    text-transform: uppercase;
+    background-color: black;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+} */

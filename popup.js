@@ -1,49 +1,51 @@
-`user strict`;
-console.log("atlest it is connected so if you don't see a copy of clipboard some this is wrong with the code below")
+'use strict';
 
-let data = ''
+let data = '';
 
-const displayBox = document.getElementById('display-box');
+// Ensure the DOM is fully loaded before accessing elements
+document.addEventListener('DOMContentLoaded', () => {
+    const displayBox = document.getElementById('display-box');
+    const sendButton = document.getElementById('send-btn');
 
-document.addEventListener('keydown', () => {
-    if(event.ctrlKey && event.key === 'v'){
+    // Event listener for Ctrl+V
+    document.addEventListener('keydown', (event) => {
+        if (event.ctrlKey && event.key === 'v') {
+            if (!navigator.clipboard) {
+                console.error("Clipboard API is not supported in this browser");
+                return;
+            }
 
-        
-        
+            // Access the clipboard contents and log it
+            navigator.clipboard.readText()
+                .then(clipboardData => {
+                    console.log("Clipboard Data:", clipboardData);
+                    data = clipboardData;
+                    displayBox.textContent = data;
+                })
+                .catch(error => {
+                    console.error("Failed to read clipboard data:", error);
+                    displayBox.textContent = "Failed to copy ";
+                });
+        }
+    });
+
+    // Event listener for the send button
+    sendButton.addEventListener('click', () => {
         if (!navigator.clipboard) {
             console.error("Clipboard API is not supported in this browser");
             return;
         }
-    
-    // Access the clipboard contents and log it
+
+        // Access the clipboard contents and log it
         navigator.clipboard.readText()
-        .then(clipboardData => {
-            console.log("Clipboard Data:", clipboardData);
+            .then(clipboardData => {
+                console.log("Clipboard Data:", clipboardData);
                 data = clipboardData;
                 displayBox.textContent = data;
             })
             .catch(error => {
                 console.error("Failed to read clipboard data:", error);
+                displayBox.textContent = "Failed to copy ";
             });
-    }
- });
-
-
-
- document.getElementById('send-btn').addEventListener('click', () => {
-        if (!navigator.clipboard) {
-            console.error("Clipboard API is not supported in this browser");
-            return;
-        }
-    
-    // Access the clipboard contents and log it
-        navigator.clipboard.readText()
-        .then(clipboardData => {
-            console.log("Clipboard Data:", clipboardData);
-                data = clipboardData;
-                displayBox.textContent = data;
-            })
-            .catch(error => {
-                console.error("Failed to read clipboard data:", error);
-            });
- });
+    });
+});
