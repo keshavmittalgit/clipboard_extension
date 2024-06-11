@@ -17,7 +17,7 @@
     "default_popup": "popup.html"
   },
   "permissions": [
-    "storage"
+    "activeTab"
   ],
   "content_scripts": [
     {
