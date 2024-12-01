@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Clipboard_extension",
+  "name": "Clipboard Share",
   "version": "0.1.0",
   "description": "My Chrome Extension",
   "icons": {
